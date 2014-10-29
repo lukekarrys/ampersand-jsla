@@ -1,83 +1,215 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>Ampersand.js: The Non-Frameworky Framework</title>
+        <title>Ampersand.js: The Non-Frameworky Framework</title>
+        <meta name="description" content="Ampersand.js: The Non-Frameworky Framework">
+        <meta name="author" content="Luke Karrys | &amp;yet">
 
-		<meta name="description" content="Ampersand.js: The Non-Frameworky Framework">
-		<meta name="author" content="Luke Karrys | &amp;yet">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/andyet.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="lib/css/github.css">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/andyet.css" id="theme">
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/github.css">
+    <body>
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
+        <div class="reveal">
+            <div class="bottom-fixed">
+                <img src="images/logos/andyet.svg" class="andyet">
+                <!--<img src="images/logos/ampersand/logo.png" class="ampersand">-->
+            </div>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+            <div class="slides">
 
-	<body>
+<!-- SLIDES -->
 
-		<div class="reveal">
+<section>
+    <h1>Ampersand.js</h1>
+    <h2>The <span>Non</span>-Frameworky <span>Framework</span></h2>
+    <p><a href="https://twitter.com/lukekarrys">Luke Karrys</a></p>
+    <aside class="notes">
+        We'll go through what is Ampersand
+        Some philosophy behind it
+        and then dive into how you would solve some problems using its pieces
 
-			<div class="slides">
-				<section data-markdown="slides.md" data-separator="^\n\n\n---\n\n\n$" data-vertical="^\n\n\n--\n\n\n$"data-notes="^Notes:"></section>
-			</div>
+        My name is Luke Karrys, I work for &yet and I'm a core ampersand team member
+    </aside>
+</section>
 
-		</div>
+<section>
+    <p><img src="images/logos/ampersand/logo.png" alt="Ampersand"></p>
+    <h2 class="big">No monolithic <span>core</span></h2>
+    <p class="fragment"><code>npm install<br/>
+    <span class="fragment">ampersand-view <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span class="fragment">ampersand-state <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span class="fragment">ampersand-collection <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span class="fragment">ampersand-subcollection <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span class="fragment">ampersand-router <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span class="fragment">ampersand-model <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span class="fragment">ampersand-view-switcher <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span class="fragment">ampersand-version <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span class="fragment">ampersand-sync <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span class="fragment">ampersand-form-view <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span>
+    </code></p>
+    <aside class="notes">
+        "Non frameworky framework?" "Huh?"
+        Its a bunch of different modules, loosely coupled but easily combined
+    </aside>
+</section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+<section>
+    <h1 class="big">Philosophy</h1>
+    <p class="fragment">Backbone structure</p>
+    <p class="fragment operator division">÷</p>
+    <p class="fragment">Node style modules</p>
+    <p class="fragment operator equal"></p>
+    <p class="fragment"><img style="height: 100px;" src="images/logos/ampersand/logo.png" alt="Ampersand"></p>
+    <aside class="notes">
+        <ul>
+            <li>Backbone was so flexible</li>
+            <li>Lacked the power features needed today</li>
+            <li>Evident by everyone having their own Backbone "flavor"</li>
+            <li>Broken up into node-style modules, enhanced for today's features you need</li>
+        </ul>
+    </aside>
+</section>
 
-		<script>
+<section>
+    <h1>Node Style</h1>
+        <p class="fragment">Everything is on <a href="https://www.npmjs.org/browse/keyword/ampersand" target="_blank"><img class="logo-inline" src="images/logos/npm.png" /></a></p>
+        <p class="fragment"><a href="http://blog.izs.me/post/48281998870/unix-philosophy-and-node-js" target="_blank">Small, focused modules</a></p>
+        <p class="fragment">Semver + quick releases</p>
+        <p class="fragment">Built for the browser<br/><span class="fragment"><img class="logo" src="images/logos/browserify.png" /><img class="logo" src="images/logos/webpack.png" /></span></p>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+    <aside class="notes">
+        What does node style mean?
+        <ul>
+        <li>Everything installed on npm, seriously check out the link</li>
+        <li>Inline with the node/unix philosophy. Check out the linked blog post for further info on this</li>
+        <li>Semver: we're careful to only make breaking changes when necessary, but semver gives us the ability to do that and release quickly</li>
+        </ul>
+        <p>Many people will open an issue or PR and have that issues as a minor or patch release that day</p>
+        <p>Combine all this built as modules for the browser for easy consumption via browserify or webpack</p>
+    </aside>
+</section>
 
-				parallaxBackgroundImage: "images/clouds.png",
-				parallaxBackgroundSize: '1895px 160px',
-				parallaxBackgroundHorizontal: 150,
-				parallaxBackgroundVertical: 30,
+<section>
+    <h1 class="big">Flexibile!<span class="fragment" data-fragment-index="1">??</span></h1>
+    <blockquote data-fragment-index="1" class="fragment current-visible hide-completely">
+        When you say <span>flexible</span>, I hear <span>footguns</span>.
+        <br>
+        <small>Anyone who has used "flexible" tools</small>
+    </blockquote>
+    <img class="fragment" data-fragment-index="2" src="images/footguns.jpg">
+    <aside class="notes">
+        Flexibility is a double-edged sword
+        Ask anyone who has built a huge app on Backbone (/me raises hand)
+        15k lines of backbone code...footguns everywhere
+    </aside>
+</section>
 
-				transition: 'linear',
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
 
-		</script>
+<section>
+    <h1>Combinations</h1>
+    <aside class="notes">
+        - State is for managaging...uh...state
+        - Model is state + rest
+        - Collection is for groups of states
+        - Rest-collection is collection + state
+        - View is dom manipulation...+ state
+    </aside>
+</section>
 
-	</body>
+<section>
+    <h1>Let's Code</h1>
+    <aside class="notes">
+        As I just mentioned views are built on state.
+
+    </aside>
+</section>
+
+<section>
+    <h1>Render Collection</h1>
+    <aside class="notes">
+
+    </aside>
+</section>
+
+<section>
+    <h2>Subcollections</h2>
+    <aside class="notes">
+        
+    </aside>
+</section>
+
+<section>
+    <h1>Resources</h1>
+    <p><a href="http://learn.humanjavascript.com/">Video tutorials</a></p>
+    <p><a href="http://humanjavascript.com/">Human Javascript Book</a></p>
+    <p><a href="http://ampersandjs.com/learn">Quickstart Guides</a></p>
+    <p><a href="http://ampersandjs.com/docs">Documentation</a></p>
+    <p><a href="https://trello.com/b/UxylNzHr/ampersand-js-roadmap">Public Roadmap</a></p>
+    <p><a href="https://blog.andyet.com/2014/10/20/breakdown-of-ampersand-todomvc-implementation">Ampersand TodoMVC</a></p>
+    <p><a href="https://blog.andyet.com/2014/08/13/opinionated-rundown-of-js-frameworks">Opionated Rundown of JS Frameworks (aka Why Ampersand)</a></p>
+    <aside class="notes">
+    </aside>
+</section>
+
+<section>
+    <h1 class="big"><a href="http://ampersandjs.com/contribute">Contribute</a></h1>
+    <h3><a href="https://botbot.me/freenode/andyet/">Come hangout on IRC</a></h3>
+    <aside class="notes">
+    </aside>
+</section>
+
+<!-- END SLIDES -->
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script>
+            Reveal.initialize({
+                controls: false,
+                progress: false,
+                history: true,
+                center: true,
+                parallaxBackgroundImage: "images/clouds.png",
+                parallaxBackgroundSize: '1895px 160px',
+                parallaxBackgroundHorizontal: 400,
+                parallaxBackgroundVertical: 0,
+                transition: 'linear',
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+    </body>
 </html>

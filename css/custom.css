@@ -1,0 +1,74 @@
+.bottom-fixed {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+
+.bottom-fixed img {
+    height: 40px;
+    opacity: 0.4;
+}
+
+.bottom-fixed .andyet {
+    position: relative;
+    top: 6px;
+    height: 40px;
+}
+
+
+.bottom-fixed img.ampersand {
+    height: 35px;
+}
+
+.reveal .operator {
+    font-size: 3em;
+    margin: 0.3em 0 0 0;
+    line-height: 0.4em;
+    font-weight: bold;
+    color: #ec008c;
+}
+
+.reveal .operator.division {
+    margin: -0.3em 0 0 0;
+    line-height: 1em;
+}
+
+.reveal .operator.equal {
+    border-bottom: 4px solid #ec008c;
+    margin-bottom: 0.3em;
+}
+
+.reveal section img.logo-inline {
+    position: relative;
+    top: 10px;
+    margin: 0;
+    height: 40px;
+}
+
+.reveal section img.amp-inline {
+    position: relative;
+    left: -5px;
+    margin: 0;
+    height: 28px;
+}
+
+.reveal section img.logo-newline {
+    margin: 0;
+    height: 100px;
+}
+
+.reveal .slides section .fragment.hide-completely {
+    -webkit-transition: opacity .2s ease;
+    -moz-transition: opacity .2s ease;
+    -ms-transition: opacity .2s ease;
+    -o-transition: opacity .2s ease;
+    transition: opacity .2s ease;
+}
+
+.reveal .slides section .fragment.current-visible.hide-completely {
+    height: 0;
+}
+
+.reveal .slides section .fragment.current-visible.hide-completely.current-fragment {
+    height: auto;
+}

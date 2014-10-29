@@ -144,7 +144,7 @@ body {
 .reveal .slide-number {
   color: #ec008c; }
 
-p strong, p em, p span, h1 strong, h1 em, h1 span, h2 strong, h2 em, h2 span, h3 strong, h3 em, h3 span, h4 strong, h4 em, h4 span, h5 strong, h5 em, h5 span, h6 strong, h6 em, h6 span, li strong, li em, li span {
+p strong, p em, p span, h1 strong, h1 em, h1 span, h2 strong, h2 em, h2 span, h3 strong, h3 em, h3 span, h4 strong, h4 em, h4 span, h5 strong, h5 em, h5 span, h6 strong, h6 em, h6 span, li strong, li em, li span, blockquote strong, blockquote em, blockquote span {
   color: #ec008c; }
 
 .reveal h1.big {
