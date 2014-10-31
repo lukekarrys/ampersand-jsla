@@ -126,3 +126,8 @@ animation-duration: 1s;
 .reveal section img[src^="images/tweet.png"] {
   background: none;
   box-shadow: none; height: 100px;}
+
+  .reveal a.image:hover img {
+  background: white
+  border-color: none;
+  box-shadow: none; }
