@@ -45,53 +45,73 @@
 <!-- SLIDES -->
 
 <section>
-    <h1>Ampersand.js</h1>
-    <h2>The <span>Non</span>-Frameworky <span>Framework</span></h2>
-    <p><a href="https://twitter.com/lukekarrys">Luke Karrys</a></p>
-    <aside class="notes">
-        We'll go through what is Ampersand
-        Some philosophy behind it
-        and then dive into how you would solve some problems using its pieces
+    <h1><img src="images/logos/ampersand/logo.png" class="title-logo tada animated" alt="Ampersand">.js</h1>
+    <h2>A <span>Non</span>-Frameworky <span>Framework</span></h2>
+    <br>
+    <p><img src="images/luke.jpg" class="me"><br/><a href="https://twitter.com/lukekarrys" target="_blank">Luke Karrys</a></p>
 
-        My name is Luke Karrys, I work for &yet and I'm a core ampersand team member
+    <aside class="notes">
+        <ul>
+        <li>Luke Karrys - I work for &amp;yet - Ampersand core team member</li>
+        <li>I'm going to talk about</li>
+        <li>-- What is ampersand</li>
+        <li>-- Some philosophy behind it</li>
+        <li>-- Dive into some code to solve a few problems</li>
+        </ul>
     </aside>
 </section>
 
 <section>
-    <p><img src="images/logos/ampersand/logo.png" alt="Ampersand"></p>
-    <h2 class="big">No monolithic <span>core</span></h2>
-    <p class="fragment"><code>npm install<br/>
-    <span class="fragment">ampersand-view <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
-    <span class="fragment">ampersand-state <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
-    <span class="fragment">ampersand-collection <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
-    <span class="fragment">ampersand-subcollection <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
-    <span class="fragment">ampersand-router <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
-    <span class="fragment">ampersand-model <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
-    <span class="fragment">ampersand-view-switcher <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
-    <span class="fragment">ampersand-version <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
-    <span class="fragment">ampersand-sync <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
-    <span class="fragment">ampersand-form-view <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span>
-    </code></p>
-    <aside class="notes">
-        "Non frameworky framework?" "Huh?"
-        Its a bunch of different modules, loosely coupled but easily combined
-    </aside>
+    <p>
+    <img src="images/logos/ampersand/beach.svg" style="height: auto; width: 35%" alt="Ampersand">
+    <img src="images/logos/ampersand/boat.svg" style="height: auto; width: 35%" alt="Ampersand"><br/>
+    <img src="images/logos/ampersand/guide.svg" style="height: auto; width: 35%" alt="Ampersand">
+    <img src="images/logos/ampersand/house.svg" style="height: auto; width: 35%" alt="Ampersand"></p>
 </section>
 
 <section>
-    <h1 class="big">Philosophy</h1>
-    <p class="fragment">Backbone structure</p>
+    <h1>What is <span>Ampersand?</span></h1>
+    <p class="fragment">Backbone-esque</p>
     <p class="fragment operator division">÷</p>
     <p class="fragment">Node style modules</p>
+    <p class="fragment operator division">+</p>
+    <p class="fragment">Advanced features</p>
     <p class="fragment operator equal"></p>
     <p class="fragment"><img style="height: 100px;" src="images/logos/ampersand/logo.png" alt="Ampersand"></p>
     <aside class="notes">
         <ul>
-            <li>Backbone was so flexible</li>
+            <li>Backbone is very flexible, we derived from that</li>
+            <li>Broken up into node-style modules</li>
             <li>Lacked the power features needed today</li>
             <li>Evident by everyone having their own Backbone "flavor"</li>
-            <li>Broken up into node-style modules, enhanced for today's features you need</li>
+            <li>Ampersand enhanced for today's features you need</li>
         </ul>
+    </aside>
+</section>
+
+<section>
+    
+    <h2 class="big">No monolithic <span>core</span></h2>
+    <p class="fragment"><code>npm install<br/>
+    <span>ampersand-view <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span>ampersand-state <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span>ampersand-collection <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span>ampersand-subcollection <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span>ampersand-router <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span>ampersand-model <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span>ampersand-view-switcher <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span>ampersand-version <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span>ampersand-sync <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span>ampersand-form-view <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span><br/>
+    <span>... <img class="amp-inline" src="images/logos/ampersand/logo.png" /></span>
+    </code></p>
+    <aside class="notes">
+        <ul>
+            <li>There is no core.</li>
+            <li>No single module to install. `ampersand` is just the cli</li>
+            <li>Ampersand is more just the well defined approach we've created to combining all those modules.</li>
+            <li>You don't need all of these by any means, but we try to solve the common problems</li>
+            <li>npm install and... npm install and...</li>
     </aside>
 </section>
 
@@ -100,86 +120,267 @@
         <p class="fragment">Everything is on <a href="https://www.npmjs.org/browse/keyword/ampersand" target="_blank"><img class="logo-inline" src="images/logos/npm.png" /></a></p>
         <p class="fragment"><a href="http://blog.izs.me/post/48281998870/unix-philosophy-and-node-js" target="_blank">Small, focused modules</a></p>
         <p class="fragment">Semver + quick releases</p>
+        <p class="fragment"><code><span>npm test</span> browserify test/* | tape-run</code></p>
+        <p class="fragment"><code><span>npm start</span> run-browser test/index.js</code></p>
         <p class="fragment">Built for the browser<br/><span class="fragment"><img class="logo" src="images/logos/browserify.png" /><img class="logo" src="images/logos/webpack.png" /></span></p>
 
     <aside class="notes">
         What does node style mean?
         <ul>
-        <li>Everything installed on npm, seriously check out the link</li>
-        <li>Inline with the node/unix philosophy. Check out the linked blog post for further info on this</li>
+        <li>npm! keyword link</li>
+        <li>Inline with the node/unix tiny modules philosophy</li>
         <li>Semver: we're careful to only make breaking changes when necessary, but semver gives us the ability to do that and release quickly</li>
+        <li>CLI and browser test scripts, use with testling, travis</li>
+        <li>Issue/PR === same day</li>
+        <li>Combine all this as modules for easy consumption via browserify or webpack</li>
         </ul>
-        <p>Many people will open an issue or PR and have that issues as a minor or patch release that day</p>
-        <p>Combine all this built as modules for the browser for easy consumption via browserify or webpack</p>
     </aside>
 </section>
 
 <section>
     <h1 class="big">Flexibile!<span class="fragment" data-fragment-index="1">??</span></h1>
-    <blockquote data-fragment-index="1" class="fragment current-visible hide-completely">
+    <blockquote data-fragment-index="1" class="fragment">
         When you say <span>flexible</span>, I hear <span>footguns</span>.
         <br>
-        <small>Anyone who has used "flexible" tools</small>
+        <small>Anyone who has been burned by "flexible" tools</small>
     </blockquote>
-    <img class="fragment" data-fragment-index="2" src="images/footguns.jpg">
+    <div class="fragment" style="margin-top: 50px">
+        <h2>Offset by:</h2><h3><span>Well defined</span> approaches<br><span>Maximized</span> simplicity</h3>
     <aside class="notes">
-        Flexibility is a double-edged sword
-        Ask anyone who has built a huge app on Backbone (/me raises hand)
-        15k lines of backbone code...footguns everywhere
-    </aside>
-</section>
-
-
-
-<section>
-    <h1>Combinations</h1>
-    <aside class="notes">
-        - State is for managaging...uh...state
-        - Model is state + rest
-        - Collection is for groups of states
-        - Rest-collection is collection + state
-        - View is dom manipulation...+ state
+        <ul>
+        <li>Flexibility is a double-edged sword</li>
+        <li>Ask anyone who has built a huge app on Backbone (/me raises hand)</li>
+        <li>15k lines of backbone code...footguns everywhere</li>
+        <li>We try to fight for simplicity and well defined appoaches</li>
+        </ul>
     </aside>
 </section>
 
 <section>
-    <h1>Let's Code</h1>
+    <h1>Composable</h1>
+    <div style="position:relative">
+    <pre style="position:absolute;top:0;left:0" class="fragment current-visible"><code class="bash" data-trim>
+└─┬ ampersand-model@4.0.3
+  ├── ampersand-state@4.3.14
+  ├── ampersand-sync@2.0.4
+  └── ampersand-version@1.0.1
+    </code></pre>
+    <pre style="position:absolute;top:0;left:0" class="fragment current-visible"><code class="bash" data-trim>
+└─┬ ampersand-rest-collection@2.0.3
+  ├── ampersand-collection@1.3.17
+  ├── ampersand-collection-rest-mixin@3.0.0
+  └── ampersand-collection-underscore-mixin@1.0.2
+    </code></pre>
+    <pre style="position:absolute;top:0;left:0" class="fragment current-visible"><code class="bash" data-trim>
+└─┬ ampersand-view@7.1.4
+  ├── ampersand-collection-view@1.1.2
+  ├── ampersand-dom-bindings@3.3.1
+  └── ampersand-state@4.3.14 # !!!
+    </code></pre>
+    <pre style="position:absolute;top:0;left:0" class="fragment current-visible"><code class="bash" data-trim>
+└─┬ ampersand-YOUR-MODULE-OR-MIXIN@1.0.0
+  ├── react@???
+  ├── some-new-crazy-stuff-no-one-has-ever-heard-of@???
+  └── ampersand-state@4.3.14
+    </code></pre>
+    </div>
     <aside class="notes">
-        As I just mentioned views are built on state.
+        <ul>
+        <li>Composable pieces make up the main pieces</li>
+        <li>Model is state + rest</li>
+        <li>Rest collection is collection + REST</li>
+        <li>View + State!</li>
+        <li>Create your own</li>
+        <li>I spend time creating ampersand views that could be used across differnt apps with the same business logic</li>
+        </ul>
+    </aside>
+</section>
 
+<section>
+    <h2>State</h2>
+
+    <pre><code class="javascript" data-trim>
+var Person = State.extend({
+    props: {
+        name: 'string'
+    },
+    session: {
+        type: {
+            type: 'string',
+            default: 'JS'
+        }
+    },
+    derived: {
+        title: {
+            deps: ['name', 'type'],
+            fn: function () {
+                return this.type + ': ' + this.name;
+            }
+        }
+    }
+});
+var person = new Person();
+person.on('change:title', console.log.bind(console));
+person.name = 'Luke Karrys'; // "JS: Luke Karrys"
+person.type = 'Ampersand'; // "Ampersand: Luke Karrys"
+    </code></pre>
+    <aside class="notes">
+        <ul>
+        <li>Derived properties</li>
+        <li>Session properties and props to server</li>
+        <li>Change events for all</li>
+        </ul>
+    </aside>
+</section>
+
+
+<section>
+    <h2>Nested State</h2>
+    <pre><code class="javascript" data-trim>
+var Project = State.extend({
+    children: {
+        assignee: Person
+    },
+    props: {
+        id: 'string',
+        name: 'string'
+    },
+    derived: {
+        title: {
+            deps: ['assignee.title', 'name'],
+            fn: function () {
+                return this.name + ' / ' + this.assignee.title;
+            }
+        }
+    }
+});
+var project = new Project({assignee: {name: 'Luke Karrys'}});
+project.on('change:title', console.log.bind(console));
+project.name = 'JSLA'; // "JSLA / JS: Luke Karrys"
+project.assignee.type = '&.js'; // "JSLA / &.js: Luke Karrys"
+    </code></pre>
+    <aside class="notes">
+        <ul>
+        <li>Derived from children</li>
+        <li>State is really powerful for modeling all the relationships in your app</li>
+        </ul>
+    </aside>
+</section>
+
+
+<section>
+    <h2>Subcollections</h2>
+    <pre><code class="javascript" data-trim>
+var Projects = Collection.extend({model: Project});
+var projects = new Projects(projectsData);
+
+var ampersand = new SubCollection(projects, {
+    filter: function (model) {
+        return model.assignee.type === 'Ampersand';
+    },
+    watched: ['assignee.type']
+});
+
+console.log(ampersand.length); // 5
+ampersand.at(0).assignee.type = 'JS';
+console.log(ampersand.length); // 4
+ampersand.at(0).assignee.type = 'JS';
+console.log(ampersand.length); // 3
+    </code></pre>
+    <aside class="notes">
+        Using derived properties from models within a collection to trigger subcollections
+    </aside>
+</section>
+
+<section>
+    <h1>Stateful Views</h1>
+
+<pre><code class="javascript" data-trim>
+var ProjectView = View.extend({
+    template: '<li></li>',
+    bindings: {
+        'title': 'li'
+    },
+    derived: {
+        title: {
+            deps: ['model.id', 'model.title'],
+            fn: function () {
+                return '(' + this.model.id + ') ' + this.model.title;
+            }
+        }
+    }
+});
+</code></pre>
+    <aside class="notes">
+    <ul>
+        <li>Item view</li>
+        <li>Keep view state in the view</li>
+        <li>Bindings</li>
+        <li>item view is keeping track of all our model changes</li>
+    </ul>
     </aside>
 </section>
 
 <section>
     <h1>Render Collection</h1>
-    <aside class="notes">
 
+<pre><code class="javascript" data-trim>
+var AppView = View.extend({
+    template: '<ul class=ampersand></ul>',
+    render: function () {
+        this.renderWithTemplate();
+        this.renderCollection(ampersand, ProjectView, '.ampersand');
+        return this;
+    }
+});
+new AppView({ el: document.querySelector('.container') }).render();
+</code></pre>
+    <aside class="notes">
+    <ul>
+        <li>App view</li>
+        <li>App view renders the collection</li>
+        <li>Collection view keeps track of all events add/remove/sort</li>
+    </ul>
     </aside>
 </section>
 
 <section>
-    <h2>Subcollections</h2>
+    <h1 class=""><a href="http://lukekarrys.github.io/ampersand-app/jsla/" target="_blank"><span>Demo</span></a></h1>
+    <h3><a href="https://github.com/lukekarrys/ampersand-app/tree/master/client/jsla" target="_blank">Source</a></h3>
+    <p>(Open the console)
     <aside class="notes">
-        
+    </aside>
+</section>
+
+<section>
+    <h1 class="big"><a href="http://ampersandjs.com/contribute" target="_blank"><span>Get Involved</span></a></h1>
+    <h3><a href="https://gitter.im/AmpersandJS/AmpersandJS" target="_blank">Come hangout on Gitter</a></h3>
+    <h3><a href="https://trello.com/b/UxylNzHr/ampersand-js-roadmap" target="_blank">Pubic Roadmap <span>(with voting!)</span></a></h3>
+    <h3><a href="http://ampersandjs.com/learn/bug-triage-process" target="_blank">Our Triage Process</a></h3>
+    <aside class="notes">
     </aside>
 </section>
 
 <section>
     <h1>Resources</h1>
-    <p><a href="http://learn.humanjavascript.com/">Video tutorials</a></p>
-    <p><a href="http://humanjavascript.com/">Human Javascript Book</a></p>
-    <p><a href="http://ampersandjs.com/learn">Quickstart Guides</a></p>
-    <p><a href="http://ampersandjs.com/docs">Documentation</a></p>
-    <p><a href="https://trello.com/b/UxylNzHr/ampersand-js-roadmap">Public Roadmap</a></p>
-    <p><a href="https://blog.andyet.com/2014/10/20/breakdown-of-ampersand-todomvc-implementation">Ampersand TodoMVC</a></p>
-    <p><a href="https://blog.andyet.com/2014/08/13/opinionated-rundown-of-js-frameworks">Opionated Rundown of JS Frameworks (aka Why Ampersand)</a></p>
+    <p><a href="http://tools.ampersandjs.com/" target="_blank">Tools</a></p>
+    <p><a href="http://ampersandjs.com/docs" target="_blank">Documentation</a></p>
+    <p><a href="http://ampersandjs.com/learn" target="_blank">Quickstart Guides</a></p>
+    <p><a href="http://learn.humanjavascript.com/" target="_blank">Video tutorials</a></p>
+    <p><a href="http://humanjavascript.com/" target="_blank">Human Javascript Book</a></p>
+    <p><a href="https://blog.andyet.com/2014/10/20/breakdown-of-ampersand-todomvc-implementation" target="_blank">Ampersand TodoMVC</a></p>
     <aside class="notes">
     </aside>
 </section>
 
-<section>
-    <h1 class="big"><a href="http://ampersandjs.com/contribute">Contribute</a></h1>
-    <h3><a href="https://botbot.me/freenode/andyet/">Come hangout on IRC</a></h3>
+<section data-background="#000" data-state="hide-all-controls">
+    <h1>Thank you!</h1>
+    <p><img src="images/tweet.png"></p>
+    <a href="http://twitter.com/ampersandjs" target="_blank">@AmpersandJS</a><br/>
+    <a href="http://twitter.com/andyet" target="_blank">@andyet</a><br/>
+    <p><a href="http://twitter.com/lukekarrys" target="_blank">@lukekarrys</a></p>
+    <br/>
+    <h3><a href="http://blog.andyet.com/2014/10/13/we-cant-be-andyet-without-andyou" target="_blank">&you Newsletter</a></h3>
     <aside class="notes">
     </aside>
 </section>

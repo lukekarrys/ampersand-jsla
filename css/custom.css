@@ -15,9 +15,18 @@
     height: 40px;
 }
 
+.title-logo {
+    position: relative;
+    top: 23px;
+    right: -3px;
+}
 
 .bottom-fixed img.ampersand {
     height: 35px;
+}
+
+.reveal pre code {
+    max-height: inherit;
 }
 
 .reveal .operator {
@@ -47,9 +56,10 @@
 
 .reveal section img.amp-inline {
     position: relative;
-    left: -5px;
+    left: -10px;
     margin: 0;
-    height: 28px;
+    height: 25px;
+    top: 2px;
 }
 
 .reveal section img.logo-newline {
@@ -72,3 +82,46 @@
 .reveal .slides section .fragment.current-visible.hide-completely.current-fragment {
     height: auto;
 }
+
+.reveal a:not(.image) span {
+    color: #12acef;
+}
+
+.tada {
+-webkit-animation-name: tada;
+-moz-animation-name: tada;
+-o-animation-name: tada;
+animation-name: tada;
+  animation-iteration-count: infinite;
+-moz-animation-iteration-count: infinite;
+-webkit-animation-iteration-count: infinite;
+-o-animation-iteration-count: infinite;
+}
+
+.animated {
+-webkit-animation-fill-mode: both;
+-moz-animation-fill-mode: both;
+-ms-animation-fill-mode: both;
+-o-animation-fill-mode: both;
+animation-fill-mode: both;
+-webkit-animation-duration: 1s;
+-moz-animation-duration: 1s;
+-ms-animation-duration: 1s;
+-o-animation-duration: 1s;
+animation-duration: 1s;
+}
+
+@-webkit-keyframes tada{0%{-webkit-transform:scale(1)}10%,20%{-webkit-transform:scale(.9) rotate(-3deg)}30%,50%,70%,90%{-webkit-transform:scale(1.1) rotate(3deg)}40%,60%,80%{-webkit-transform:scale(1.1) rotate(-3deg)}100%{-webkit-transform:scale(1) rotate(0)}}@-moz-keyframes tada{0%{-moz-transform:scale(1)}10%,20%{-moz-transform:scale(.9) rotate(-3deg)}30%,50%,70%,90%{-moz-transform:scale(1.1) rotate(3deg)}40%,60%,80%{-moz-transform:scale(1.1) rotate(-3deg)}100%{-moz-transform:scale(1) rotate(0)}}@-o-keyframes tada{0%{-o-transform:scale(1)}10%,20%{-o-transform:scale(.9) rotate(-3deg)}30%,50%,70%,90%{-o-transform:scale(1.1) rotate(3deg)}40%,60%,80%{-o-transform:scale(1.1) rotate(-3deg)}100%{-o-transform:scale(1) rotate(0)}}@keyframes tada{0%{transform:scale(1)}10%,20%{transform:scale(.9) rotate(-3deg)}30%,50%,70%,90%{transform:scale(1.1) rotate(3deg)}40%,60%,80%{transform:scale(1.1) rotate(-3deg)}100%{transform:scale(1) rotate(0)}}.tada:hover{-webkit-animation-name:tada;-moz-animation-name:tada;-o-animation-name:tada;animation-name:tada}
+
+.reveal section img.me {
+    height: 100px;
+    border-radius: 200px;
+    border: 4px solid #4d5659;
+    background: none;
+    box-shadow: none;
+    margin: 0;
+}
+
+.reveal section img[src^="images/tweet.png"] {
+  background: none;
+  box-shadow: none; height: 100px;}

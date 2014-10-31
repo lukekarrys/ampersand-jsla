@@ -50,6 +50,14 @@ body {
   text-transform: uppercase;
   text-shadow: -1px -1px 1px #4d5659; }
 
+.hide-all-controls .reveal h1,
+.hide-all-controls .reveal h2,
+.hide-all-controls .reveal h3,
+.hide-all-controls .reveal h4,
+.hide-all-controls .reveal h5,
+.hide-all-controls .reveal h6 {
+  text-shadow: none; }
+
 .reveal h1 {
   text-shadow: -1px -1px 1px #4d5659; }
 
